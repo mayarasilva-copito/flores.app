@@ -1,0 +1,35 @@
+.caracteristicas {
+  text-align: center;
+  padding: 20px;
+  background-color: #b3e5fc;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  margin: 40px;
+  border: #63b3d8 10px solid;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card h2 {
+  color: #0288d1;
+}
+
+.card img {
+  width: 250px;
+  height: 200px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,16 @@
+.intro {
+  background-image: url(https://i.pinimg.com/474x/10/be/a1/10bea18c5c4cc833515904822231b00d.jpg);
+  background-color: #81d4fa;
+  text-align: center;
+  padding: 20px;
+  border: #63b3d8 10px solid;
+}
+.intro h4 {
+  color: #000000;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.intro h4 {
+  text-align: justify;
+  margin: 10px;
+}
