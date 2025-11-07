@@ -1,0 +1,91 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #f3faff; /* Fondo general muy clarito */
+}
+
+.login-card {
+  background-color: #d9f0fa; /* Fondo pastel suave */
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-card h1 {
+  margin-bottom: 20px;
+  color: #0277bd; /* Azul medio */
+  font-weight: bold;
+  font-size: 22px;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 12px auto;
+  padding: 10px;
+  border: 1px solid #b0e0f5;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #ffffff;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #81d4fa;
+  box-shadow: 0 0 5px rgba(129, 212, 250, 0.6);
+}
+
+.btn-iniciar,
+.btn-google {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-iniciar {
+  background-color: #81d4fa; /* Celeste pastel */
+  color: white;
+}
+
+.btn-iniciar:hover {
+  background-color: #4fc3f7;
+}
+
+.btn-google {
+  background-color: white;
+  color: #01579b;
+  border: 1px solid #81d4fa;
+}
+
+.btn-google:hover {
+  background-color: #e1f5fe;
+}
+
+.login-card {
+  animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,77 @@
+.registrar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #f3faff; /* Fondo muy suave */
+}
+
+.registrar-card {
+  background-color: #d9f0fa; /* Mismo celeste pastel */
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  font-family: "Poppins", sans-serif;
+}
+
+.registrar-card h1 {
+  margin-bottom: 20px;
+  color: #0277bd;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 12px auto;
+  padding: 10px;
+  border: 1px solid #b0e0f5;
+  border-radius: 12px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #ffffff;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #81d4fa;
+  box-shadow: 0 0 5px rgba(129, 212, 250, 0.6);
+}
+
+.btn-registrar {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: #81d4fa;
+  color: white;
+}
+
+.btn-registrar:hover {
+  background-color: #4fc3f7;
+}
+
+.registrar-card {
+  animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
