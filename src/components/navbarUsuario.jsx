@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { geAuth, signOut } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 
 import "./header.css";
 
 function NavbarUsuario() {
-  const auth = geAuth();
+  const auth = getAuth();
 
   const cerrarsesion = async () => {
     await signOut(auth);
@@ -20,18 +20,18 @@ function NavbarUsuario() {
               <a href="/intro">Inicio</a>
             </li>
             <li>
-              <a href="/caracteristicas">Caracteristicas</a>
+              <a href="/caracteristicas">Características</a>
             </li>
             <li>
               <a href="/tipos">Galería</a>
             </li>
             <li>
-              <a href="/Iniciar-sesion">Inicio sesion</a>
+              <a href="/Iniciar-sesion">Iniciar sesión</a>
             </li>
             <li>
-              <a href="/Resgistrarse">Resgistrarse</a>
+              <a href="/Resgistrarse">Registrarse</a>
             </li>
-            <button>Cerrar Sesion</button>
+            <button onClick={cerrarsesion}>Cerrar sesión</button>
           </ul>
         </nav>
         <br />
@@ -39,4 +39,5 @@ function NavbarUsuario() {
     </>
   );
 }
+
 export default NavbarUsuario;
