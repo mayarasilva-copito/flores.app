@@ -15,7 +15,6 @@ import LoginNuevo from "./components/LoginNuevo";
 import RegistroNuevo from "./components/ResgistroNuevo";
 
 function App() {
-  // 👇 agrego una sola función simple
   const handleLogin = (user) => {
     console.log("Usuario logueado:", user);
   };

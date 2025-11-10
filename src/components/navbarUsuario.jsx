@@ -25,12 +25,6 @@ function NavbarUsuario() {
             <li>
               <a href="/tipos">Galería</a>
             </li>
-            <li>
-              <a href="/Iniciar-sesion">Iniciar sesión</a>
-            </li>
-            <li>
-              <a href="/Resgistrarse">Registrarse</a>
-            </li>
             <button onClick={cerrarsesion}>Cerrar sesión</button>
           </ul>
         </nav>

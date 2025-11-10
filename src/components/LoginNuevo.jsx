@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -13,37 +14,46 @@ const provider = new GoogleAuthProvider();
 function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const iniciarSesion = async () => {
-    const auth = getAuth(); // ✅ correcto
-    signInWithEmailAndPassword(auth, email, password) // 👈 solo asegúrate de pasar auth aquí
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        // Signed in
         const user = userCredential.user;
-        console.log("Se inició sesión");
-        onLogin(user);
+        console.log("Se inicio sesion");
+        // onLogin(user);
+        navigate("/intro");
       })
       .catch((error) => {
-        console.log("Error al iniciar sesión");
-        console.log(error.code, error.message); // 👈 muestra el motivo exacto del error
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Error al iniciar sesion");
       });
   };
 
   const iniciarSesionGoogle = () => {
+    // Documentacion de Firebase
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken; // 👈 agregué el ? por seguridad
+        const token = credential.accessToken;
         const user = result.user;
-        console.log("Iniciaste sesión con Google");
-        onLogin(user);
+        console.log("Iniciaste sesion con Google");
+        // onLogin(user);
+        navigate("/");
       })
       .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
         console.log("Error al iniciar con Google");
-        console.log(error.code, error.message);
+        console.log(error);
       });
   };
-
   return (
     <div className="login-container">
       <div className="login-card">
@@ -63,6 +73,7 @@ function Login({ onLogin }) {
         <button className="btn-iniciar" onClick={iniciarSesion}>
           Iniciar Sesión
         </button>
+        <p>o</p>
         <button className="btn-google" onClick={iniciarSesionGoogle}>
           🔵 Iniciar Sesión con Google
         </button>

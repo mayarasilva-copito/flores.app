@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import "./resgistrar.css";
 
 function RegistroUsuario({ onRegister, cambiarVista }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const provider = new GoogleAuthProvider();
 
   const registrar = async () => {
-    const auth = getAuth(); // ✅ mantiene tu estructura
-    createUserWithEmailAndPassword(auth, email, password) // 👈 solo se agregó "auth,"
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Cuenta creada con éxito");
@@ -16,8 +22,21 @@ function RegistroUsuario({ onRegister, cambiarVista }) {
       })
       .catch((error) => {
         console.log("Error al registrar el usuario");
-        console.log(error.code);
-        console.log(error.message);
+        console.log(error.code, error.message);
+      });
+  };
+
+  const iniciarSesionGoogle = async () => {
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log("Cuenta creada con Google");
+        onRegister(user);
+      })
+      .catch((error) => {
+        console.log("Error al registrar con Google");
+        console.log(error.code, error.message);
       });
   };
 
@@ -39,6 +58,10 @@ function RegistroUsuario({ onRegister, cambiarVista }) {
         />
         <button className="btn-registrar" onClick={registrar}>
           Crear Cuenta ✨
+        </button>
+        <p>o</p>
+        <button className="btn-google" onClick={iniciarSesionGoogle}>
+          🔵 Crear cuenta con Google
         </button>
       </div>
     </div>
