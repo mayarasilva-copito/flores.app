@@ -13,6 +13,9 @@ import Footer from "./components/footer";
 import Tipos from "./components/tipos";
 import LoginNuevo from "./components/LoginNuevo";
 import RegistroNuevo from "./components/ResgistroNuevo";
+import Comunidad from "./components/comunidad";
+import FloreriaSection from "./components/floreriaSection";
+import RutaPrivada from "./components/rutaprivada";
 
 function App() {
   const handleLogin = (user) => {
@@ -24,11 +27,29 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/intro" element={<Intro />} />
+        <Route
+          path="/intro"
+          element={
+            <>
+              <Intro /> <FloreriaSection />
+            </>
+          }
+        />
         <Route path="/caracteristicas" element={<Caracteristicas />} />
         <Route path="/tipos" element={<Tipos />} />
+        <Route path="/Comunidad" element={<Comunidad />} />
         <Route path="/Iniciar-sesion" element={<LoginNuevo />} />
         <Route path="/Resgistrarse" element={<RegistroNuevo />} />
+        <Route
+          path="/comunidad"
+          element={
+            <>
+              <RutaPrivada>
+                <Comunidad />
+              </RutaPrivada>
+            </>
+          }
+        />
       </Routes>
 
       <Footer />

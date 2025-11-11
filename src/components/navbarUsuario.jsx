@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 import "./header.css";
 
 function NavbarUsuario() {
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const cerrarsesion = async () => {
     await signOut(auth);
+    navigate("/intro");
   };
 
   return (
@@ -17,13 +20,17 @@ function NavbarUsuario() {
           <div className="logo">🌸 Mundo Floral</div>
           <ul className="nav-links">
             <li>
-              <a href="/intro">Inicio</a>
+              <Link to="/intro">Inicio</Link>
             </li>
             <li>
-              <a href="/caracteristicas">Características</a>
+              <Link to="/caracteristicas">Caracteristicas</Link>
             </li>
             <li>
-              <a href="/tipos">Galería</a>
+              <Link to="/tipos">Tipos</Link>
+            </li>
+
+            <li>
+              <Link to="/comunidad">Comunidad</Link>
             </li>
             <button onClick={cerrarsesion}>Cerrar sesión</button>
           </ul>

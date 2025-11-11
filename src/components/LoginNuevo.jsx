@@ -43,7 +43,7 @@ function Login({ onLogin }) {
         const user = result.user;
         console.log("Iniciaste sesion con Google");
         // onLogin(user);
-        navigate("/");
+        navigate("/intro");
       })
       .catch((error) => {
         const errorCode = error.code;

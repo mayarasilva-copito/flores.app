@@ -10,19 +10,22 @@ function NavbarVisitante() {
           <div className="logo">🌸 Mundo Floral</div>
           <ul className="nav-links">
             <li>
-              <a href="/intro">Inicio</a>
+              <Link to="/intro">Inicio</Link>
             </li>
             <li>
-              <a href="/caracteristicas">Caracteristicas</a>
+              <Link to="/Caracteristicas">Caracteristicas</Link>
             </li>
             <li>
-              <a href="/tipos">Galería</a>
+              <Link to="/tipos">Tipos</Link>
             </li>
             <li>
-              <a href="/Iniciar-sesion">Inicio sesion</a>
+              <Link to="/comunidad">Comunidad</Link>
             </li>
             <li>
-              <a href="/Resgistrarse">Resgistrarse</a>
+              <Link to="/iniciar-sesion">Inicio sesion</Link>
+            </li>
+            <li>
+              <Link to="/Resgistrarse">Resgistrase</Link>
             </li>
           </ul>
         </nav>

@@ -1,7 +1,8 @@
-// Importa las funciones que necesitas de los SDKs
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"; // 👈 Agregado para usar Auth
-import { getAnalytics } from "firebase/analytics";
+//base de datos
+import { getFirestore } from "firebase/firestore";
+//autenticacion
+import { getAuth } from "firebase/auth";
 
 // Configuración de tu aplicación Firebase
 const firebaseConfig = {
@@ -14,10 +15,9 @@ const firebaseConfig = {
   measurementId: "G-NZ9X4668GT",
 };
 
-// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
 
-// Exporta la autenticación para usarla en Login y Registro
-export const auth = getAuth(app);
+//exportaciones
 export default app;
+export { db, getAuth };
