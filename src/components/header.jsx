@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import app from "../firebase";
-import NavbarUsuario from "./navbarUsuario";
-import NavbarVisitante from "./navbarVisitante";
+import NavbarUsuario from "./NavbarUsuario";
+import NavbarVisitante from "./NavbarVisitante";
 
 function Header() {
   const [Usuario, setUsuario] = useState(null);
