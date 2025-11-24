@@ -1,35 +1,165 @@
 .mi-footer {
-  background-color: #f19797; /* color rosa melón */
+  background-color: #f19797;
   color: #000;
-  display: flex;
-  justify-content: space-between; /* texto a la izquierda, iconos a la derecha */
-  align-items: center;
-  padding: 20px 50px;
+  padding: 25px 50px;
   border-top: 3px solid #eb7563;
-  font-size: 1.6rem;
-  /* position: fixed;  <-- quitado */
-  /* bottom: 0;        <-- quitado */
-  left: 0;
-  right: 0;
-  /* ahora se comporta como un footer normal, no se queda estático */
+  font-size: 1.35rem;
 }
 
-.mi-footer p {
-  margin: 0;
-}
-
-.mi-footer .social-icons {
+.footer-content {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* --- COLUMNA 1 --- */
+.footer-info h3 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  max-width: 230px;
+}
+
+/* --- COLUMNA 2: ENLACES --- */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.footer-links h4 {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  padding-left: 5px;
+  color: #eb7563;
+  font-weight: bold;
+}
+
+/* --- COLUMNA 3: REDES --- */
+.social-icons {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  padding-left: 20px;
 }
 
-.mi-footer .social-icons a img {
-  width: 30px;
-  height: 30px;
+.social-icons h4 {
+  margin: 0 0 10px 0;
+}
+
+.social-icons div {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.mi-footer .social-icons a img:hover {
-  transform: scale(1.2);
+.social-icons img:hover {
+  transform: scale(1.18);
+  box-shadow: 0px 0px 8px #ffffff;
+}
+
+/* ----------- CELULARES ----------- */
+@media (max-width: 768px) {
+  .mi-footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .footer-links,
+  .social-icons {
+    padding-left: 0;
+  }
+
+  .footer-links a,
+  .footer-info p {
+    font-size: 1.3rem;
+  }
+
+  .social-icons div {
+    justify-content: center;
+  }
+
+  .footer-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ----------- TELÉFONOS PEQUEÑOS ----------- */
+@media (max-width: 480px) {
+  .mi-footer {
+    padding: 20px;
+  }
+
+  .footer-info p {
+    font-size: 1.25rem;
+  }
+
+  .footer-links a {
+    font-size: 1.25rem;
+  }
+}
+
+/* ----------- LAPTOP Y PANTALLAS GRANDES ----------- */
+@media (min-width: 1024px) {
+  .mi-footer {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: none;
+    gap: 50px;
+  }
+
+  .footer-info,
+  .footer-links,
+  .social-icons {
+    flex: 1;
+  }
+
+  .footer-links,
+  .social-icons {
+    padding-left: 0 !important;
+  }
+
+  .footer-info p {
+    max-width: 300px;
+  }
+
+  .social-icons div {
+    justify-content: flex-start;
+  }
 }

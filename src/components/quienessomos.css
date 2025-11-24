@@ -1,251 +1,149 @@
+:root {
+  --rosa-principal: #f19797; /* color principal */
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background-color: #fffdfd;
-  color: #000000;
+  color: #2b1d1d;
   font-size: 17px;
   line-height: 1.7;
-  text-transform: lowercase;
-}
-
-/* Header */
-header {
-  background: #ffffff;
-  color: #000;
-  padding: 1.5rem 2rem;
-  text-align: center;
-}
-
-/* Secciones */
-.section_quienesomos {
-  padding: 6rem 4rem;
-  max-width: 1300px;
-  margin: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.3rem;
   margin-bottom: 2rem;
-  color: #0c0000;
+  color: #2b1d1d;
   position: relative;
 }
 
 .section-title::after {
   content: "";
   display: block;
-  width: 90px;
-  height: 4px;
-  background: #f19797;
+  width: 70px;
+  height: 3px;
+  background: var(--rosa-principal);
   margin: 0.5rem auto;
   border-radius: 3px;
 }
 
-/* 🐾 HISTORIA */
-#historia .card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* más anchas */
-  gap: 2rem; /* menos separación */
-  justify-items: center;
-}
-
-#historia .card {
-  background-color: #f19797;
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  color: black;
-  overflow: hidden;
-  max-width: 500px; /* más grandes */
-  font-size: 1.05rem;
-}
-
-#historia .card:hover {
-  transform: translateY(-5px);
-}
-
-/* 💭 MISION Y VISION */
-#mision-vision .card-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20rem; /* 🔹 más separación entre cartas */
-  flex-wrap: wrap;
-}
-
-#mision-vision .card {
-  background-color: #f19797;
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-  color: black;
-  max-width: 480px;
-  flex: 1 1 420px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: 600px; /* 🔹 evita que se achique y tape la imagen */
-}
-
-#mision-vision .card h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.4rem;
-}
-
-#mision-vision .card img {
-  width: 100%;
-  height: 240px; /* 🔹 imagen más alta y visible */
-  object-fit: cover;
-  border-radius: 12px;
-  margin-top: 1.2rem;
-}
-
-/* 💕 EQUIPO */
-.team-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  margin-top: 2rem;
-}
-
-.team-card {
-  background: #f19797;
-  border-radius: 14px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s;
-  max-width: 320px;
-}
-
-.team-card:hover {
-  transform: scale(1.05);
-}
-
-.team-card .foto-miembro {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 1rem auto;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.imagenlogo {
-  width: 100%;
-  margin: 1rem 0;
-  text-align: center;
-}
-
-.team-card h4 {
-  margin-bottom: 0.3rem;
-  color: #000;
-  text-transform: capitalize;
-}
-
-.team-card p {
-  font-size: 95%;
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  #mision-vision .card-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  #mision-vision .card {
-    max-width: 95%;
-    min-height: auto;
-  }
-
-  #historia .card {
-    max-width: 95%;
-  }
-
-  .team-card .foto-miembro {
-    width: 150px;
-    height: 150px;
-  }
-}
-.historia-ampliada {
-  padding: 6rem 3rem;
-  background-color: #f19797;
+.quienes-container, .historia-ampliada, #mision-vision, .equipo, .cta-final {
+  padding: 4rem 2rem;
   max-width: 1200px;
   margin: auto;
-  border-radius: 5%;
 }
 
-.historia-contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+/* ================= HISTORIA ================= */
+.historia-ampliada {
+  background-color: var(--rosa-principal);
+  border-radius: 15px;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem; 
 }
 
-.historia-texto {
-  max-width: 900px;
+.parrafo-historia {
+  background-color: #fff4f4;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.texto-historia {
+  flex: 1 1 500px;
   font-size: 18px;
   line-height: 1.8;
   text-align: justify;
-  color: #4a2d2d;
 }
 
-.historia-imagenes {
+.imagenes-historia {
+  flex: 1 1 400px;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.historia-imagenes img {
-  width: 320px;
-  height: 220px;
+.imagenes-historia img {
+  width: 300px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-.historia-imagenes img:hover {
-  transform: scale(1.05);
+.imagenes-historia img:hover {
+  transform: scale(1.03);
 }
 
-/* --- MISIÓN Y VISIÓN SEPARADAS --- */
+/* ================= MISION Y VISION ================= */
 .mision-vision-separadas {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 4rem;
+  justify-content: space-around;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  background-color: var(--rosa-principal);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem; 
 }
 
-.imagen-misionvision img {
-  width: 220px;
-  height: 200px;
+.card-mv {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1 1 45%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-mv img {
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   margin-top: 1rem;
   border-radius: 10px;
 }
-.redes {
-  margin-top: 0.2rem;
+
+/* ================= EQUIPO ================= */
+.equipo {
+  background-color: var(--rosa-principal);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
 }
 
-.redes a {
-  color: #000;
-  font-size: 1.4rem;
-  margin: 0 0.5rem;
-  transition: color 0.3s;
+.grid-equipo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.redes a:hover {
-  color: #000000;
+.team-card {
+  background-color: #fff4f4;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
-/* --- Corrección para el ícono de Instagram en "Nuestro Equipo" --- */
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card .foto-miembro {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem auto;
+}
 
 .redes {
   width: 100%;
@@ -257,18 +155,69 @@ header {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background-color: #e28888;
-  color: #fffafa;
-  font-size: 22px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
+  background-color: #fff4f4;
+  color: var(--rosa-principal);
+  font-size: 20px;
+  margin: 0 0.3rem;
+  transition: transform 0.3s;
 }
 
 .redes a:hover {
-  background-color: #e68c8c;
-  color: white;
   transform: scale(1.1);
+  color: #fff;
+  background-color: #e68c8c;
+}
+
+/* ================= CTA FINAL ================= */
+.cta-final {
+  background-color: var(--rosa-principal);
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 4rem auto;
+}
+
+.cta-final button {
+  background-color: #fff;
+  color: var(--rosa-principal);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.cta-final button:hover {
+  transform: scale(1.05);
+  background-color: #f8d1cf; /* hover suave */
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .historia-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texto-historia, .imagenes-historia {
+    flex: 1 1 100%;
+  }
+
+  .mision-vision-separadas {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card-mv {
+    flex: 1 1 100%;
+  }
+
+  .team-card .foto-miembro {
+    width: 140px;
+    height: 140px;
+  }
 }

@@ -29,7 +29,7 @@ body {
 }
 
 section {
-  padding: 2rem 9%;
+  padding: 20px;
 }
 
 .home .content {
@@ -154,7 +154,7 @@ header {
 
 header .logo {
   font-size: 3.5rem;
-  color: #333;
+  color: #000000;
   font-weight: bolder;
 }
 
@@ -175,7 +175,7 @@ header .navbar a:hover {
 
 header .icons a {
   font-size: 2.5rem;
-  color: #333;
+  color: #000000;
   margin-left: 1.5rem;
 }
 
@@ -189,11 +189,11 @@ header #toggler {
 
 header .fa-bars {
   font-size: 3rem;
-  color: #333;
+  color: #000000;
   border-radius: 0.5rem;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
-  border: 0.1rem solid #333;
+  border: 0.1rem solid #000000;
   display: none;
 }
 
@@ -259,7 +259,7 @@ header .fa-bars {
 }
 
 section {
-  padding: 2rem 9%;
+  padding: 20px;
 }
 
 section {
@@ -419,7 +419,7 @@ h1.text-center {
 }
 
 .mi-footer p {
-  color: #ffffff;
+  color: #000000;
 }
 
 .text-container p {
@@ -450,7 +450,7 @@ h1.text-center {
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #000000;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
@@ -459,6 +459,6 @@ h1.text-center {
 .seccion-dedicamos p {
   font-size: 17px;
   line-height: 1.7;
-  color: #333;
+  color: #000000;
   font-family: 'Poppins', sans-serif;
 }

@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Header from "./components/Header";
+import NavbarVisitante from "./components/NavbarVisitante";
+import NavbarUsuario from "./components/NavbarUsuario";
+
 import Footer from "./components/footer";
 import Tipos from "./components/tipos";
 import LoginNuevo from "./components/LoginNuevo";
@@ -15,23 +17,34 @@ import Listademascotas from "./components/mascotas";
 import Contactos from "./components/contactos";
 import Cuidados from "./components/cuidados";
 
+import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+
 function App() {
+  const [usuario, setUsuario] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUsuario(user); // user es null = visitante
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <BrowserRouter>
-      <Header />
+      
+      {/* 🔥 CAMBIO AUTOMÁTICO DE NAVBAR */}
+      {usuario ? <NavbarUsuario /> : <NavbarVisitante />}
 
       <Routes>
-        <Route
-          path="/Portada"
-          element={
-            <>
-              <Portada /> 
-            </>
-          }
-        />
-        <Route path="/quienessomos" element={<Quienessomos/>} />
-        <Route path="/mascotas" element={<Listademascotas/>} />
-        <Route path="/cuidados" element={<Cuidados/>} />
+        <Route path="/Portada" element={<Portada />} />
+        <Route path="/quienessomos" element={<Quienessomos />} />
+        <Route path="/mascotas" element={<Listademascotas />} />
+        <Route path="/cuidados" element={<Cuidados />} />
+
+        {/* 🔒 FORMULARIO PRIVADO */}
         <Route
           path="/formulario"
           element={
@@ -40,14 +53,14 @@ function App() {
             </RutaPrivada>
           }
         />
-       
-        <Route path="/contactos" element={<Contactos/>} />
 
-        {/* LOGIN Y REGISTRO */}
+        <Route path="/contactos" element={<Contactos />} />
+
+        {/* 🔑 LOGIN Y REGISTRO */}
         <Route path="/iniciar-sesion" element={<LoginNuevo />} />
         <Route path="/Registrarse" element={<RegistroNuevo />} />
 
-        {/* COMUNIDAD PRIVADA */}
+        {/* 🔒 COMUNIDAD PRIVADA */}
         <Route
           path="/comunidad"
           element={
@@ -56,6 +69,9 @@ function App() {
             </RutaPrivada>
           }
         />
+
+        {/* RUTA POR DEFECTO */}
+        <Route path="*" element={<Portada />} />
       </Routes>
 
       <Footer />

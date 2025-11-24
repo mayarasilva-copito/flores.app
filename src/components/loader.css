@@ -1,0 +1,60 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+}
+
+.paw {
+  width: 90px;
+  height: 90px;
+  background: url("../img/patita.png");
+  background-size: cover;
+  animation: paw-bounce 0.8s infinite ease-in-out,
+             paw-beat 1.4s infinite ease-in-out;
+  filter: drop-shadow(0 0 15px #ffb6d9); /* ✨ Brillo rosado pastel */
+}
+
+
+/* 🩷 SALTO */
+@keyframes paw-bounce {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+
+/* 💜 LATIDO (pum-pum) */
+@keyframes paw-beat {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.12);
+  }
+  60% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.loader-text {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #3b3b3b;
+  font-weight: 600;
+  opacity: 0.8;
+}
+

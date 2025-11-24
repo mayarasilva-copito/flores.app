@@ -31,17 +31,25 @@ Tal vez hoy seas tú quien convierta su esperanza en un hogar… y su tristeza e
 
               <div className="seccion-dedicamos">
   <h2>¡A Qué Nos Dedicamos!</h2>
+<p>
+  Nos dedicamos a trabajar con dedicación para ayudar a perros y gatos que han sido abandonados o que viven 
+  en situaciones difíciles. Nuestro equipo y los voluntarios se encargan de rescatarlos, brindarles 
+  atención médica, alimentarlos y darles un lugar seguro donde puedan sentirse protegidos.  
+  <br /><br />
+  Muchos de ellos llegan asustados, enfermos o sin haber conocido nunca el cariño de una familia. 
+  Por eso, además de cuidarlos físicamente, también les damos amor, paciencia y un espacio donde puedan 
+  recuperarse y volver a confiar.  
+  <br /><br />
+  Mientras están con nosotros, los preparamos para su nueva vida: los socializamos, los vacunamos y 
+  los acompañamos hasta que estén listos para ser adoptados. Cada vez que uno de nuestros peluditos 
+  encuentra un hogar, sentimos que es una victoria enorme, porque significa una vida cambiada para siempre.  
+  <br /><br />
+  Nuestro compromiso es seguir rescatando, ayudando y trabajando para que cada vez más animales tengan 
+  la oportunidad de vivir con dignidad, amor y respeto. Creemos en un futuro donde ningún animal sufra 
+  abandono y donde cada uno pueda conocer lo que es tener una familia que lo quiera de verdad.
+</p>
 
-  <p>
-    Cada año, cientos de perros y gatos son abandonados o viven en situaciones difíciles. 
-    Aunque no siempre se conoce la cifra exacta, se estima que muchos más de los que imaginamos 
-    necesitan ayuda urgente. Gracias al trabajo constante de nuestro equipo y al apoyo de la comunidad, 
-    hemos logrado rescatar a decenas de peluditos que hoy tienen una nueva oportunidad. 
-    Cada uno representa una vida cambiada y un paso más hacia un mundo donde los animales 
-    reciben el amor y el respeto que merecen. Seguimos trabajando con dedicación para que cada vez 
-    más animales abandonados puedan ser rescatados, curados y adoptados, construyendo un futuro 
-    donde nunca más tengan que sufrir.
-  </p>
+
 </div>
 
 

@@ -27,7 +27,7 @@ h1 {
 
 p {
   text-align: center;
-  color: #333;
+  color: #000000;
   font-size: 18px;
   margin-bottom: 40px;
 }
@@ -295,3 +295,5 @@ button:hover {
     font-size: 13px;
   }
 }
+
+

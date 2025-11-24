@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"; // 👈 Para recibir la mascota
 import "./formulario.css";
 import { db } from "../firebase";
 import {
@@ -7,10 +8,13 @@ import {
   getDocs,
   deleteDoc,
   doc,
+  updateDoc,
 } from "firebase/firestore";
 
 function Formulario() {
-  // 🧠 Datos del formulario
+  const location = useLocation();
+  const mascotaSeleccionada = location.state?.mascota;
+
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -22,17 +26,13 @@ function Formulario() {
     compromiso: "",
   });
 
-  // Popup de éxito
   const [mostrarPopup, setMostrarPopup] = useState(false);
-
-  // Modo edición
   const [modoEditar, setModoEditar] = useState(false);
   const [idEditando, setIdEditando] = useState(null);
-
-  // LISTA DE FORMULARIOS
+  const [modoEditarTabla, setModoEditarTabla] = useState(null);
   const [listaFormularios, setListaFormularios] = useState([]);
 
-  // Cargar registros de Firestore
+  // 👉 Cargar registros de Firestore
   const cargarRegistros = async () => {
     const querySnapshot = await getDocs(
       collection(db, "formularios_adopcion")
@@ -48,44 +48,63 @@ function Formulario() {
     cargarRegistros();
   }, []);
 
-  // Manejar cambios
+  // 👉 Prellenar con la mascota seleccionada
+ useEffect(() => {
+  if (mascotaSeleccionada) {
+    setFormData((prev) => ({
+      ...prev,
+      tipo_mascota: mascotaSeleccionada.mascota, // prellena solo el tipo de mascota
+    }));
+  }
+}, [mascotaSeleccionada]);
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Enviar formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      // Añadir registro
-      if (!modoEditar) {
+      if (modoEditar && idEditando) {
+        await updateDoc(doc(db, "formularios_adopcion", idEditando), formData);
+        setModoEditar(false);
+        setIdEditando(null);
+      } else {
         await addDoc(collection(db, "formularios_adopcion"), formData);
       }
 
       setMostrarPopup(true);
-      setModoEditar(false);
-
       setTimeout(() => setMostrarPopup(false), 4000);
 
-      // Actualizar lista
+      setFormData({
+        nombre: "",
+        email: "",
+        telefono: "",
+        direccion: "",
+        tipo_mascota: "",
+        experiencia: "",
+        tiempo_libre: "",
+        compromiso: "",
+      });
+
       cargarRegistros();
     } catch (error) {
-      console.error("Error al enviar formulario:", error);
-      alert("Hubo un error al enviar tu solicitud ❌");
+      console.error("Error:", error);
+      alert("Hubo un error ❌");
     }
   };
 
-  // Eliminar registro
   const eliminarRegistro = async (id) => {
     await deleteDoc(doc(db, "formularios_adopcion", id));
     cargarRegistros();
   };
 
-  // Editar registro (cargar datos al form)
   const editarRegistro = (item) => {
-    setModoEditar(true);
+    setModoEditar(true);       
+    setModoEditarTabla(item);  
     setIdEditando(item.id);
     setFormData(item);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -98,57 +117,51 @@ function Formulario() {
         <p>Completa este formulario para brindarle un hogar a un peludito 🐶🐱</p>
 
         <form className="formulario-adopcion" onSubmit={handleSubmit}>
-          {/* Columna izquierda */}
           <div className="columna">
             <div className="campo">
-              <label htmlFor="nombre">Nombre completo</label>
+              <label>Nombre completo</label>
               <input
                 type="text"
                 name="nombre"
                 value={formData.nombre}
                 onChange={handleChange}
-                placeholder="Tu nombre completo"
                 required
               />
             </div>
 
             <div className="campo">
-              <label htmlFor="email">Correo electrónico</label>
+              <label>Correo electrónico</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="ejemplo@email.com"
                 required
               />
             </div>
 
             <div className="campo">
-              <label htmlFor="telefono">Teléfono</label>
+              <label>Teléfono</label>
               <input
                 type="tel"
                 name="telefono"
                 value={formData.telefono}
                 onChange={handleChange}
-                placeholder="Ej. 123456789"
                 required
               />
             </div>
 
             <div className="campo">
-              <label htmlFor="direccion">Dirección</label>
+              <label>Dirección</label>
               <textarea
                 name="direccion"
                 value={formData.direccion}
                 onChange={handleChange}
-                placeholder="Tu dirección completa"
                 required
               ></textarea>
             </div>
           </div>
 
-          {/* Columna derecha */}
           <div className="columna">
             <div className="campo">
               <label>¿Qué deseas adoptar?</label>
@@ -170,7 +183,6 @@ function Formulario() {
                 name="experiencia"
                 value={formData.experiencia}
                 onChange={handleChange}
-                placeholder="Cuéntanos tu experiencia..."
               ></textarea>
             </div>
 
@@ -181,7 +193,6 @@ function Formulario() {
                 name="tiempo_libre"
                 value={formData.tiempo_libre}
                 onChange={handleChange}
-                placeholder="Ej. 8"
                 required
               />
             </div>
@@ -197,7 +208,7 @@ function Formulario() {
                     checked={formData.compromiso === "si"}
                     onChange={handleChange}
                     required
-                  />{" "}
+                  />
                   Sí
                 </label>
                 <label>
@@ -207,7 +218,7 @@ function Formulario() {
                     value="no"
                     checked={formData.compromiso === "no"}
                     onChange={handleChange}
-                  />{" "}
+                  />
                   No
                 </label>
               </div>
@@ -222,7 +233,6 @@ function Formulario() {
         </form>
       </div>
 
-      {/* POPUP ÉXITO */}
       {mostrarPopup && (
         <div className="popup-fondo">
           <div className="popup-exito">
@@ -237,10 +247,11 @@ function Formulario() {
         </div>
       )}
 
-      {/* 📋 LISTA DE REGISTROS */}
       <div className="lista-registros">
         <h2>📋 Lista de Formularios Enviados</h2>
-        <button onClick={cargarRegistros} className="btn-actualizar">🔄 Actualizar</button>
+        <button onClick={cargarRegistros} className="btn-actualizar">
+          🔄 Actualizar
+        </button>
 
         {listaFormularios.length === 0 ? (
           <p>No hay registros aún.</p>
