@@ -5,7 +5,6 @@ import NavbarVisitante from "./components/NavbarVisitante";
 import NavbarUsuario from "./components/NavbarUsuario";
 
 import Footer from "./components/footer";
-import Tipos from "./components/tipos";
 import LoginNuevo from "./components/LoginNuevo";
 import Comunidad from "./components/comunidad";
 import RutaPrivada from "./components/rutaprivada";
