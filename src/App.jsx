@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import NavbarVisitante from "./components/NavbarVisitante";
+import NavbarVisitante from "./components/NavbarVisitante.jsx";
 import NavbarUsuario from "./components/NavbarUsuario";
 
 import Footer from "./components/footer";
