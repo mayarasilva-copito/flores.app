@@ -20,10 +20,10 @@ function Login({ onLogin }) {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
+ 
         const user = userCredential.user;
         console.log("Se inicio sesion");
-        // onLogin(user);
+
         navigate("/portada");
       })
       .catch((error) => {
@@ -34,7 +34,7 @@ function Login({ onLogin }) {
   };
 
   const iniciarSesionGoogle = () => {
-    // Documentacion de Firebase
+
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -42,7 +42,7 @@ function Login({ onLogin }) {
         const token = credential.accessToken;
         const user = result.user;
         console.log("Iniciaste sesion con Google");
-        // onLogin(user);
+
         navigate("/portada");
       })
       .catch((error) => {

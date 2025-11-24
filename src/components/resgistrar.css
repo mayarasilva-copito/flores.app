@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #fffdfd; /* Fondo suave como tu web */
+  background-color: #fffdfd; 
 }
 
 .registrar-card {
-  background-color: #f19797; /* Rosado pastel */
+  background-color: #f19797;
   border-radius: 20px;
   padding: 40px;
   text-align: center;
@@ -19,18 +19,17 @@
 
 .registrar-card h1 {
   margin-bottom: 20px;
-  color: #4a2d2d; /* Marroncito suave */
+  color: #4a2d2d;
   font-weight: bold;
   font-size: 22px;
 }
 
-/* INPUTS */
 input {
   display: block;
   width: 90%;
   margin: 12px auto;
   padding: 10px;
-  border: 1px solid #e28888; /* rosado fuerte */
+  border: 1px solid #e28888; 
   border-radius: 12px;
   font-size: 14px;
   text-align: center;
@@ -40,7 +39,7 @@ input {
 }
 
 input:focus {
-  border-color: #e68c8c; /* rosado suave */
+  border-color: #e68c8c; 
   box-shadow: 0 0 5px rgba(230, 140, 140, 0.6);
 }
 
@@ -55,15 +54,15 @@ input:focus {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
-  background-color: #e28888; /* rosado fuerte */
+  background-color: #e28888;
   color: white;
 }
 
 .btn-registrar:hover {
-  background-color: #e68c8c; /* rosado más claro */
+  background-color: #e68c8c; 
 }
 
-/* ANIMACIÓN */
+
 @keyframes aparecer {
   from {
     opacity: 0;

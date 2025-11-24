@@ -1,5 +1,5 @@
 :root {
-  --rosa-principal: #f19797; /* color principal */
+  --rosa-principal: #f19797; 
 }
 
 body {
@@ -193,7 +193,7 @@ body {
 
 .cta-final button:hover {
   transform: scale(1.05);
-  background-color: #f8d1cf; /* hover suave */
+  background-color: #f8d1cf; 
 }
 
 /* ================= RESPONSIVE ================= */

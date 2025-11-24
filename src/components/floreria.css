@@ -59,10 +59,10 @@ p {
 .image-section {
   flex: 1;
   min-width: 100px;
-  height: 460px; /* puedes aumentar si quieres verla completa */
-  background-size: contain; /* 🔹 muestra toda la imagen sin recortarla */
-  background-position: center; /* 🔹 centrada */
-  background-repeat: no-repeat; /* 🔹 no se repite */
+  height: 460px; 
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   border: 4px solid #d2edf7;

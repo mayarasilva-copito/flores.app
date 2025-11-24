@@ -11,14 +11,13 @@
   z-index: 100;
 }
 
-/* CONTENEDOR NAV */
 .usr-nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between; 
 }
 
-/* LOGO + TÍTULO */
+
 .usr-logito {
   display: flex;
   align-items: center;
@@ -43,7 +42,7 @@
   letter-spacing: 1px;
 }
 
-/* LINKS */
+
 .usr-nav-links {
   list-style: none;
   display: flex;
@@ -82,7 +81,7 @@
   width: 100%;
 }
 
-/* MENÚ HAMBURGUESA */
+
 .usr-menu-icon {
   display: none;
   flex-direction: column;
@@ -110,7 +109,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .usr-nav-inner {
     flex-direction: column;
@@ -176,7 +175,7 @@
   z-index: 100;
 }
 
-/* CONTENEDOR NAV */
+
 .vis-nav-inner {
   display: flex;
   align-items: center;
@@ -184,7 +183,7 @@
 }
 
 
-/* LOGO + TÍTULO */
+
 .vis-logito {
   display: flex;
   align-items: center;
@@ -209,7 +208,7 @@
   letter-spacing: 1px;
 }
 
-/* LINKS */
+
 .vis-nav-links {
   list-style: none;
   display: flex;
@@ -248,7 +247,6 @@
   width: 100%;
 }
 
-/* MENÚ HAMBURGUESA */
 .vis-menu-icon {
   display: none;
   flex-direction: column;
@@ -276,7 +274,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .vis-nav-inner {
     flex-direction: column;
@@ -329,9 +327,6 @@
     font-size: 18px;
   }
 }
-/* ------------------------------------------------------ */
-/* ----------------- NAVBAR VISITANTE ------------------- */
-/* ------------------------------------------------------ */
 
 .vis-nav-header {
   background-color: #f19797;
@@ -342,14 +337,14 @@
   z-index: 100;
 }
 
-/* CONTENEDOR NAV */
+
 .vis-nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO + TÍTULO */
+
 .vis-logito {
   display: flex;
   align-items: center;
@@ -374,7 +369,7 @@
   letter-spacing: 1px;
 }
 
-/* LINKS */
+
 .vis-nav-links {
   list-style: none;
   display: flex;
@@ -413,7 +408,7 @@
   width: 100%;
 }
 
-/* MENÚ HAMBURGUESA */
+
 .vis-menu-icon {
   display: none;
   flex-direction: column;
@@ -441,7 +436,7 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .vis-nav-inner {
     flex-direction: column;

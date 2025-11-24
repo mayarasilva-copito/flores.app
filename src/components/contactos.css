@@ -4,7 +4,7 @@ body {
   background-color: #fff;
 }
 
-/* Contenedor principal */
+
 .contacto-principal {
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* FORMULARIO */
+
 .formulario-box {
   flex: 1;
   min-width: 400px;
@@ -84,7 +84,6 @@ body {
   font-weight: bold;
 }
 
-/* INFORMACIÓN */
 .info-box {
   flex: 1;
   min-width: 400px;
@@ -148,7 +147,6 @@ body {
   font-weight: bold;
 }
 
-/* Adaptable */
 @media (max-width: 900px) {
   .contacto-principal {
     flex-direction: column;

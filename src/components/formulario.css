@@ -1,11 +1,11 @@
 body {
-  background-color: #f8eaea; /* más suave, combina con tu portada */
+  background-color: #f8eaea; 
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* 🌸 Tarjeta Principal */
+
 .formulario-contenedor {
   max-width: 1100px;
   margin: 60px auto;
@@ -16,7 +16,7 @@ body {
   animation: fadeIn 0.6s ease;
 }
 
-/* 🌸 Títulos */
+
 h1 {
   text-align: center;
   color: #e56f6f;
@@ -32,7 +32,7 @@ p {
   margin-bottom: 40px;
 }
 
-/* 🐾 FORMULARIO EN DOS COLUMNAS */
+
 .formulario-adopcion {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +48,7 @@ p {
   gap: 35px;
 }
 
-/* 🐾 Campos */
+
 .campo label {
   font-weight: 600;
   color: #e56f6f;
@@ -67,7 +67,7 @@ p {
   transition: 0.3s ease;
 }
 
-/* 🌼 Enfoque bonito */
+
 .campo input:focus,
 .campo textarea:focus,
 .campo select:focus {
@@ -77,7 +77,7 @@ p {
   box-shadow: 0 0 12px rgba(228, 113, 113, 0.3);
 }
 
-/* 🐶 Grupo de radios */
+
 .radio-group {
   display: flex;
   gap: 30px;
@@ -85,7 +85,7 @@ p {
   color: #555;
 }
 
-/* ❤️ Botón */
+
 button {
   background-color: #e56f6f;
   color: white;
@@ -103,7 +103,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* 📱 RESPONSIVE */
+
 @media (max-width: 768px) {
   .formulario-adopcion {
     flex-direction: column;
@@ -119,7 +119,7 @@ button:hover {
   }
 }
 
-/* 🎉 POPUP */
+
 .popup-fondo {
   position: fixed;
   top: 0;
@@ -156,7 +156,7 @@ button:hover {
   color: #444;
 }
 
-/* ✨ Animaciones */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -178,7 +178,7 @@ button:hover {
     opacity: 1;
   }
 }
-/* 🌸 Contenedor lista */
+
 .lista-registros {
   max-width: 1100px;
   margin: 60px auto;
@@ -189,7 +189,6 @@ button:hover {
   animation: fadeIn 0.6s ease;
 }
 
-/* 🌸 Título lista */
 .lista-registros h2 {
   text-align: center;
   font-size: 28px;
@@ -197,7 +196,7 @@ button:hover {
   margin-bottom: 25px;
 }
 
-/* 🔄 Botón actualizar */
+
 .btn-actualizar {
   background-color: #f5baba;
   color: #fff;
@@ -215,7 +214,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* 📋 TABLA */
+
 .tabla-registros {
   width: 100%;
   border-collapse: collapse;
@@ -237,18 +236,17 @@ button:hover {
   font-size: 15px;
 }
 
-/* Quitar última línea */
 .tabla-registros tr:last-child td {
   border-bottom: none;
 }
 
-/* Hover filas */
+
 .tabla-registros tbody tr:hover {
   background: #ffecec;
   transition: 0.3s ease;
 }
 
-/* ✏️ Botón editar */
+
 .btn-editar-tabla {
   background-color: #6fa8e5;
   color: white;
@@ -265,7 +263,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* 🗑️ Botón eliminar */
+
 .btn-eliminar-tabla {
   background-color: #e56f6f;
   color: white;
@@ -281,7 +279,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* 📱 RESPONSIVE TABLA */
+
 @media (max-width: 768px) {
   .tabla-registros th,
   .tabla-registros td {

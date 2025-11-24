@@ -16,7 +16,7 @@
   margin-bottom: 25px;
 }
 
-/* Grid y cartas */
+
 .ms-grid4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -76,7 +76,6 @@
 
 .pop { transform: scale(1.3); }
 
-/* 🐾 Animación de huellita */
 .paw-animation {
   position: fixed;
   bottom: 40px;

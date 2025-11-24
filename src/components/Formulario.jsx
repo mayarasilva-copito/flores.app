@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom"; // 👈 Para recibir la mascota
+import { useLocation } from "react-router-dom"; 
 import "./formulario.css";
 import { db } from "../firebase";
 import {
@@ -32,7 +32,6 @@ function Formulario() {
   const [modoEditarTabla, setModoEditarTabla] = useState(null);
   const [listaFormularios, setListaFormularios] = useState([]);
 
-  // 👉 Cargar registros de Firestore
   const cargarRegistros = async () => {
     const querySnapshot = await getDocs(
       collection(db, "formularios_adopcion")
@@ -48,12 +47,12 @@ function Formulario() {
     cargarRegistros();
   }, []);
 
-  // 👉 Prellenar con la mascota seleccionada
+
  useEffect(() => {
   if (mascotaSeleccionada) {
     setFormData((prev) => ({
       ...prev,
-      tipo_mascota: mascotaSeleccionada.mascota, // prellena solo el tipo de mascota
+      tipo_mascota: mascotaSeleccionada.mascota,
     }));
   }
 }, [mascotaSeleccionada]);

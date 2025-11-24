@@ -14,11 +14,11 @@
   background-size: cover;
   animation: paw-bounce 0.8s infinite ease-in-out,
              paw-beat 1.4s infinite ease-in-out;
-  filter: drop-shadow(0 0 15px #ffb6d9); /* ✨ Brillo rosado pastel */
+  filter: drop-shadow(0 0 15px #ffb6d9); 
 }
 
 
-/* 🩷 SALTO */
+
 @keyframes paw-bounce {
   0% {
     transform: translateY(0);
@@ -34,7 +34,7 @@
   }
 }
 
-/* 💜 LATIDO (pum-pum) */
+
 @keyframes paw-beat {
   0% {
     transform: scale(1);

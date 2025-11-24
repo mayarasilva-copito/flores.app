@@ -12,7 +12,6 @@ function Listademascotas() {
   useEffect(() => {
     const timer = setTimeout(() => setCargando(false), 300);
 
-    // Añadimos adoptado: false a cada mascota
     const inicial = datos.Listademascotas.map(m => ({ ...m, adoptado: false }));
     setMascotas(inicial);
 
@@ -24,9 +23,9 @@ function Listademascotas() {
   const perritos = mascotas.filter((m) => m.mascota.toLowerCase().includes("perro"));
   const gatitos = mascotas.filter((m) => m.mascota.toLowerCase().includes("gato"));
 
-  // Enviar al formulario con la mascota seleccionada
+
   function adoptar(m) {
-    // Marcamos la mascota como adoptada
+
     setMascotas(mascotas.map(masc => masc.id === m.id ? { ...masc, adoptado: true } : masc));
     navigate("/formulario", { state: { mascota: m } });
   }

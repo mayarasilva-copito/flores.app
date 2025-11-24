@@ -1,10 +1,10 @@
-// src/contactos/Contactos.js
+
 import React, { useState, useEffect, useRef } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { MdLocationOn, MdPhone, MdEmail, MdLanguage } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
-import "./contactos.css"; // Asegúrate que el CSS está en la misma carpeta
+import "./contactos.css"; 
 
 function Contactos() {
   const [form, setForm] = useState({
@@ -26,13 +26,12 @@ function Contactos() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos a enviar:", form); // Depuración
+    console.log("Datos a enviar:", form); 
 
     try {
-      // Guardar en Firestore en la colección "donaciones"
+
       await addDoc(collection(db, "donaciones"), form);
 
-      // Resetear formulario
       setForm({ nombre: "", correo: "", tipoAyuda: "", monto: "", mensaje: "" });
       setEnviado(true);
       setTimeout(() => setEnviado(false), 3000);
@@ -54,7 +53,7 @@ function Contactos() {
 
   return (
     <div className="contacto-principal" ref={containerRef}>
-      {/* Formulario de donaciones */}
+
       <div className="formulario-box" style={{ height: altura }}>
         <h2>💖 Formulario de Donaciones</h2>
         <p>
@@ -110,7 +109,7 @@ function Contactos() {
         </form>
       </div>
 
-      {/* Información de contacto */}
+
       <div className="info-box" style={{ height: altura }}>
         <h2>📍 Contacto Happy Tails</h2>
 

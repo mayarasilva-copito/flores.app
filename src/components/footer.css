@@ -14,7 +14,7 @@
   gap: 25px;
 }
 
-/* --- COLUMNA 1 --- */
+
 .footer-info h3 {
   margin: 0;
   font-size: 1.7rem;
@@ -26,7 +26,7 @@
   max-width: 230px;
 }
 
-/* --- COLUMNA 2: ENLACES --- */
+
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -50,7 +50,7 @@
   font-weight: bold;
 }
 
-/* --- COLUMNA 3: REDES --- */
+
 .social-icons {
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@
   box-shadow: 0px 0px 8px #ffffff;
 }
 
-/* ----------- CELULARES ----------- */
+
 @media (max-width: 768px) {
   .mi-footer {
     padding: 25px;
@@ -116,7 +116,7 @@
   }
 }
 
-/* ----------- TELÉFONOS PEQUEÑOS ----------- */
+
 @media (max-width: 480px) {
   .mi-footer {
     padding: 20px;
@@ -131,7 +131,6 @@
   }
 }
 
-/* ----------- LAPTOP Y PANTALLAS GRANDES ----------- */
 @media (min-width: 1024px) {
   .mi-footer {
     padding-left: 80px;

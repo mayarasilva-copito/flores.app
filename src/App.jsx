@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUsuario(user); // user es null = visitante
+      setUsuario(user);
     });
 
     return () => unsubscribe();
@@ -35,7 +35,6 @@ function App() {
   return (
     <BrowserRouter>
       
-      {/* 🔥 CAMBIO AUTOMÁTICO DE NAVBAR */}
       {usuario ? <NavbarUsuario /> : <NavbarVisitante />}
 
       <Routes>
@@ -44,7 +43,6 @@ function App() {
         <Route path="/mascotas" element={<Listademascotas />} />
         <Route path="/cuidados" element={<Cuidados />} />
 
-        {/* 🔒 FORMULARIO PRIVADO */}
         <Route
           path="/formulario"
           element={
@@ -55,12 +53,10 @@ function App() {
         />
 
         <Route path="/contactos" element={<Contactos />} />
-
-        {/* 🔑 LOGIN Y REGISTRO */}
         <Route path="/iniciar-sesion" element={<LoginNuevo />} />
         <Route path="/Registrarse" element={<RegistroNuevo />} />
 
-        {/* 🔒 COMUNIDAD PRIVADA */}
+
         <Route
           path="/comunidad"
           element={
@@ -70,7 +66,7 @@ function App() {
           }
         />
 
-        {/* RUTA POR DEFECTO */}
+
         <Route path="*" element={<Portada />} />
       </Routes>
 

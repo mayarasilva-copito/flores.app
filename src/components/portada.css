@@ -103,7 +103,7 @@ img {
   outline: none;
   border: none;
   text-decoration: none;
-  text-transform: none; /* aquí ya no aplica capitalize a todo */
+  text-transform: none; 
   transition: 0.2s linear;
 }
 h1,
@@ -229,26 +229,23 @@ header .fa-bars {
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     display: none;
-    /* Ocultar la barra de navegación en dispositivos móviles */
+
   }
 
   header #toggler:checked ~ .navbar {
     display: block;
-    /* Mostrar la barra de navegación al hacer clic en el icono de hamburguesa */
     clip-path: none;
-    /* Eliminar la máscara de recorte */
   }
 
   header .navbar a {
     margin: 1.5rem 0;
-    /* Ajustar los márgenes superior e inferior */
     padding: 1rem;
     background: #fff;
     border: 1rem solid rgba(0, 0, 0, 0.1);
     display: block;
     text-align: center;
     width: 100%;
-    /* Ocupar todo el ancho disponible */
+
   }
 }
 
@@ -297,40 +294,33 @@ h1 {
 .imagen-content {
   display: flex;
   flex-direction: row;
-  /* Esto coloca la imagen y el texto en línea */
   align-items: center;
-  /* Alinea verticalmente */
   justify-content: space-between;
-  /* Espacio entre imagen y texto */
   gap: 20px;
-  /* Espacio entre los dos elementos */
   flex-wrap: wrap;
-  /* Por si el espacio es pequeño, que no se rompa feo */
 }
 
 .imagenprincipal {
   flex: 1;
-  /* Ocupa una parte proporcional del ancho */
   min-width: 300px;
 }
 
 .imagenprincipal img {
-  width: 450px;      /* Tamaño ideal */
+  width: 450px;      
   height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto;    /* Centrada */
+  margin: 0 auto;   
 }
 
 
 .text-container {
   flex: 2;
-  /* El texto ocupa el doble del ancho de la imagen */
   text-align: left;
 }
 
 .about {
-  min-height: 75vh; /* mínimo igual a la pantalla */
+  min-height: 75vh;
   background-image: url('...');
   background-repeat: no-repeat;
   background-position: center;
@@ -339,11 +329,8 @@ h1 {
 }
 .content {
   background-color: rgba(255, 246, 246, 0.932);
-  /* Fondo semitransparente */
   backdrop-filter: blur(8px);
-  /* Borrosidad del fondo */
   -webkit-backdrop-filter: blur(8px);
-  /* Soporte para Safari */
   padding: 20px;
   border-radius: 12px;
   color: #675c5c;
@@ -352,9 +339,7 @@ h1 {
 h1.text-center {
   background-color: #f9a092;
   padding: 20px;
-  /* opcional para separar contenido del borde */
   border-radius: 10px;
-  /* opcional para bordes redondeados */
 }
 
 .mi-footer {
@@ -373,11 +358,10 @@ h1.text-center {
   border-radius: 5px;
 }
 
-/* Portada estilo hero */
+
 .hero {
   position: relative;
   height: 100vh;
-  /* ocupa toda la pantalla */
   background: url('../img/portada.jpg') no-repeat center center/cover;
   display: flex;
   justify-content: center;
@@ -387,7 +371,6 @@ h1.text-center {
   overflow: hidden;
 }
 
-/* Capa de sombra (overlay) */
 .hero .overlay {
   position: absolute;
   top: 0;
@@ -395,11 +378,9 @@ h1.text-center {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  /* oscurece para que el texto se vea */
   z-index: 1;
 }
 
-/* Contenido */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -426,26 +407,24 @@ h1.text-center {
   color: #000000;
 }
 
-/* Texto del hero (portada) */
+
 .hero-content h1,
 .hero-content p {
-  color: white; /* letra blanca */
+  color: white;
 }
 
-/* Texto de la sección de abajo (about) */
 .text-container h3,
 .text-container p {
-  color: black; /* letra negra */
+  color: black; 
 }
-/* Contenedor general del texto */
 .seccion-dedicamos {
-  max-width: 900px;      /* Hace que no se vea tan extendido */
-  margin: 0 auto;        /* Centra todo */
+  max-width: 900px;      
+  margin: 0 auto;       
   padding: 20px;
-  text-align: justify;   /* Ajusta el texto bonito */
+  text-align: justify;  
 }
 
-/* Título ¡A Qué Nos Dedicamos! */
+
 .seccion-dedicamos h2 {
   font-size: 30px;
   text-align: center;
@@ -455,7 +434,6 @@ h1.text-center {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Texto (párrafo) */
 .seccion-dedicamos p {
   font-size: 17px;
   line-height: 1.7;

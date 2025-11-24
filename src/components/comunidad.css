@@ -1,6 +1,16 @@
+
+.contenedor-principal {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 60px;             
+  flex-wrap: wrap;         
+  min-height: 80vh;        
+  padding: 40px 20px;      
+}
+
 .comunidad-container {
-  max-width: 450px;
-  margin: 40px auto;
+  max-width: 400px;
   padding: 25px;
   background: white;
   border-radius: 20px;
@@ -8,93 +18,92 @@
   text-align: center;
 }
 
-h1 {
-  color: #00796b;
-  margin-bottom: 10px;
-}
-
-.foto-container {
-  display: flex;
-  justify-content: center;
-  margin: 15px 0;
-}
-
 .foto-perfil {
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #80cbc4;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #f19797;
 }
 
-.bienvenida {
-  font-size: 16px;
+
+.comunidad {
+  max-width: 400px;
+  text-align: center;
+}
+
+.carrusel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrusel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.reseña-card {
+  min-width: 100%;
+  box-sizing: border-box;
+  background-color: #f19797;
+  color: #000;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin: auto;
+}
+
+.imagen-reseña {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #fff;
+}
+
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin-top: 10px;
 }
 
-.info {
-  background-color: #f1f8e9;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 15px 0;
-}
-
-.formulario {
-  margin-top: 20px;
-}
-
-.formulario h2 {
-  color: #6a1b9a;
-  margin-bottom: 10px;
-}
-
-input {
-  width: 90%;
-  padding: 8px;
-  margin: 6px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s;
-}
-
-input:focus {
-  border-color: #6a1b9a;
-  box-shadow: 0 0 5px #ce93d8;
-}
-
-button {
-  background: #00796b;
-  color: white;
+.botones button {
+  background-color: #eb7563;
   border: none;
-  padding: 10px;
+  color: white;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-
-  transition: background 0.3s ease;
 }
 
-button:hover {
-  background: #004d40;
+.botones button:hover {
+  background-color: #d15b4f;
 }
 
-.mensaje-final {
-  margin-top: 20px;
-  font-style: italic;
-  color: #000000;
+
+.indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
 }
 
-.cargando {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 1.2rem;
-  color: #000000;
+.indicador {
+  width: 12px;
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.comunidad {
-  text-align: center;
-  padding: 60px 20px;
+
+.indicador.activo {
+  background-color: #eb7563;
 }
+
 
 .titulo-comunidad {
   font-size: 32px;
@@ -103,18 +112,30 @@ button:hover {
   font-weight: bold;
 }
 
-.reseñas-container {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
+
+.formulario-resena {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.reseña-card {
-  background: #fff4f7;
-  padding: 20px;
-  width: 250px;
-  border-radius: 20px;
-  box-shadow: 0px 4px 10px rgba(255, 176, 189, 0.4);
-  font-family: "Poppins", sans-serif;
+.formulario-resena textarea {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.formulario-resena button {
+  background-color: #eb7563;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.formulario-resena button:hover {
+  background-color: #d15b4f;
 }
